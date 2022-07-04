@@ -21,6 +21,13 @@ const MainContainer = styled.div`
   min-height: 80vh;
   padding: 20px;
   gap: 30px;
+
+  @media screen and (max-width: 480px) {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  }  
 `;
 
 const ContainerProdutos = styled.div`
@@ -34,6 +41,11 @@ const ContainerProdutos = styled.div`
   border-radius: 4px;
   padding: 0 15px;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  
+  @media screen and (max-width: 480px) {
+  width: 100%;
+  }  
+
 `;
 
 const ContainerProdutoPrecoRemover = styled.div`
@@ -59,16 +71,28 @@ const ContainerFinalizarCompra = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 480px) {
+  width: 100%;
+  }  
 `
 const TextFinalizarCompra = styled.p`
   font-weight: bold;
   font-size: 22px;
+
+  @media screen and (max-width: 480px) {
+  font-size: 18px;
+  }  
 `
 
 const ContainerCarrinhoNaoVazio = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media screen and (max-width: 480px) {
+  width: 90%;
+  }  
 `;
 
 export default class Carrinho extends React.Component {
@@ -131,12 +155,10 @@ export default class Carrinho extends React.Component {
                 color="white"
                 colorScheme="blue"
                 height="35px"
-                width="120px"
                 variant="solid"
                 fontWeight="thin"
                 fontSize="18"
                 marginTop="5"
-                paddingRight="10"
                 leftIcon={<Icon as={TbArrowBackUp} w={5} h={5} />}
                 onClick={() => this.props.mudarTela("contratarjob")}
               >
@@ -151,12 +173,12 @@ export default class Carrinho extends React.Component {
                 color="white"
                 colorScheme="blue"
                 height="40px"
-                width="150px"
                 variant="solid"
                 fontWeight="thin"
                 fontSize="19"
-                marginLeft="400"
-                paddingRight="12"
+                width="30%"
+                marginLeft="70%"
+                paddingRight="10"
                 leftIcon={<Icon as={TbArrowBackUp} w={7} h={7} />}
                 onClick={() => this.props.mudarTela("contratarjob")}
               >
@@ -169,7 +191,6 @@ export default class Carrinho extends React.Component {
                   color="white"
                   colorScheme="blue"
                   height="40px"
-                  width="230px"
                   variant="solid"
                   fontWeight="thin"
                   fontSize="19"

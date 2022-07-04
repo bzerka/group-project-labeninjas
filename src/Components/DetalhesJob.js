@@ -25,10 +25,18 @@ const TextTitle = styled.p`
   font-size: 40px;
   font-weight: bold;
   color: #3c719f;
+
+  @media screen and (max-width: 480px) {
+    font-size: 30px;
+  }  
 `;
 
 const TextDatePrice = styled.p`
   font-size: 22px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }  
 `;
 
 const ContainerDescription = styled.div`
@@ -37,6 +45,11 @@ const ContainerDescription = styled.div`
   flex-wrap: wrap;
   width: 450px;
   font-size: 20px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+    width: 90%;
+  }  
 `;
 
 const ContainerFormasDePagamento = styled.div`
@@ -46,6 +59,10 @@ const ContainerFormasDePagamento = styled.div`
   justify-content: center;
   gap: 10px;
   font-size: 18px;
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+  }  
 `;
 
 const FormasDePagamento = styled.p`
@@ -61,6 +78,10 @@ const ContainerBotoes = styled.div`
   flex-direction: column;
   gap: 5px;
   width: 450px;
+
+  @media screen and (max-width: 480px) {
+  width: 300px;
+  }  
 `;
 
 export default class DetalhesJob extends React.Component {
@@ -97,7 +118,6 @@ export default class DetalhesJob extends React.Component {
                 color="white"
                 colorScheme="blue"
                 height="40px"
-                width="450px"
                 variant="solid"
                 fontWeight="normal"
                 fontSize="19"
@@ -112,7 +132,6 @@ export default class DetalhesJob extends React.Component {
                 color="white"
                 colorScheme="blue"
                 height="40px"
-                width="450px"
                 variant="solid"
                 fontWeight="normal"
                 fontSize="19"
@@ -126,7 +145,6 @@ export default class DetalhesJob extends React.Component {
               color="#3c719f"
               colorScheme="blue"
               height="40px"
-              width="450px"
               variant="outline"
               fontWeight="normal"
               fontSize="19"

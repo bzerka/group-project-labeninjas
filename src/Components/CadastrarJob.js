@@ -32,6 +32,9 @@ const Textoh1 = styled.p`
   margin-top: 40px;
   font-size: 55px;
   color: #3c719f;
+  @media screen and (max-width: 480px) {
+    font-size: 30px;
+  }
 `;
 
 const ContainerRenderizarPagamento = styled.div`
@@ -39,11 +42,15 @@ const ContainerRenderizarPagamento = styled.div`
   align-items: center;
   flex-wrap: wrap;
   height: 100%;
-  max-width: 500px;
+  width: 500px;
   gap: 10px;
   padding-left: 10px;
   margin: 5px 0;
   justify-content: flex-start;
+
+  @media screen and (max-width: 480px) {
+    max-width: 200px;
+  }
 `;
 
 const ContainerFormasPagamento = styled.div`
@@ -59,6 +66,10 @@ const ContainerFormasPagamento = styled.div`
 const ContainerInputs = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 480px) {
+    max-width: 250px;
+  }
 `;
 
 export default class CadastrarJob extends React.Component {
@@ -153,7 +164,6 @@ export default class CadastrarJob extends React.Component {
                   errorBorderColor="blue.300"
                   border="1px solid blue.300"
                   type="text"
-                  width="500px"
                   placeholder=" "
                   value={this.state.inputTitulo}
                   onChange={(e) =>
@@ -252,7 +262,7 @@ export default class CadastrarJob extends React.Component {
             fontWeight="normal"
             fontSize="22"
             marginTop="5"
-            padding="5px"
+            paddingBot="5px"
             onClick={() => this.createJob()}
           >
             Cadastrar

@@ -15,6 +15,7 @@ const Container = styled.div`
 
 const MainContainer = styled.div`
   height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -24,7 +25,26 @@ const MainContainer = styled.div`
 `;
 
 const ContainerIcon = styled.div`
-  margin-left: 50px;
+  width: 100%;
+  display: flex;
+  padding-left: 50px;
+  justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const ContainerIcon2 = styled.div`
+  width: 100%;
+  padding-left: 55px;
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const TextoHome = styled.p`
@@ -33,7 +53,24 @@ const TextoHome = styled.p`
   font-style: italic;
   margin-top: 10px;
   padding-bottom: 10px;
-`
+
+  @media screen and (max-width: 480px) {
+    margin-top: 30px;
+  }
+`;
+
+const ContainerButtons = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 35px;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 60px;
+  }
+`;
 
 export default class Inicio extends React.Component {
   render() {
@@ -41,7 +78,7 @@ export default class Inicio extends React.Component {
       <Container>
         <MainContainer>
           <ContainerIcon>
-          <Player
+            <Player
               autoplay
               loop
               src="https://assets2.lottiefiles.com/packages/lf20_sg3zxa.json"
@@ -53,8 +90,21 @@ export default class Inicio extends React.Component {
               />
             </Player>
           </ContainerIcon>
+          <ContainerIcon2>
+            <Player
+              autoplay
+              loop
+              src="https://assets2.lottiefiles.com/packages/lf20_sg3zxa.json"
+              style={{ height: "230px", width: "230px", marginRight: "50px" }}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </ContainerIcon2>
           <TextoHome>O talento certo, no momento certo!</TextoHome>
-          <ButtonGroup gap="1" marginTop='45'>
+          <ContainerButtons>
             <Button
               bg="#3c719f"
               color="white"
@@ -83,7 +133,7 @@ export default class Inicio extends React.Component {
             >
               Contratar um ninja
             </Button>
-          </ButtonGroup>
+          </ContainerButtons>
         </MainContainer>
       </Container>
     );

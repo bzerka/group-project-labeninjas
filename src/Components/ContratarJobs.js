@@ -29,6 +29,11 @@ const MainContainer = styled.div`
   padding: 20px 0 20px 20px;
   justify-content: flex-start;
   background-color: #d2e2f1;
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+    padding: 10px 0;
+  }  
 `;
 
 const FiltrosContainer = styled.div`
@@ -38,6 +43,14 @@ const FiltrosContainer = styled.div`
   width: 60%;
   gap: 30px;
   margin-left: 20%;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px 0;
+    gap: 5px;
+  }  
 `;
 
 const ContainerJob = styled.div`
@@ -84,6 +97,26 @@ const Header = styled.div`
   margin-bottom: 5px;
   box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.15),
     0px 2px 1px -1px rgb(0 0 0 / 30%);
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Header2 = styled.div`
+  height: 10vh;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #386a98;
+  margin-bottom: 5px;
+  box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.15),
+  0px 2px 1px -1px rgb(0 0 0 / 30%);
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+  }
 `;
 
 const DivInputBuscar = styled.div`
@@ -124,7 +157,7 @@ export default class ContratarJobs extends React.Component {
   };
 
   // Caso necessário remover um serviço
-  // 
+  //
   // deleteJob = (id) => {
   //   const delJob = axios.delete(`https://labeninjas.herokuapp.com/jobs/${id}`, {
   //     headers: {
@@ -285,11 +318,27 @@ export default class ContratarJobs extends React.Component {
                 width="50px"
                 height="35px"
                 color="white"
-                onClick={() => this.props.mudarTela('carrinho')}
+                onClick={() => this.props.mudarTela("carrinho")}
               />
             </IconeCarrinho>
           </Tooltip>
         </Header>
+        <Header2>
+          <ContainerIconHeader onClick={() => this.props.mudarTela("inicio")}>
+            <Imagem src={labeninjas2} />
+          </ContainerIconHeader>
+          <Tooltip hasArrow label="Ver carrinho" placement="bottom">
+            <IconeCarrinho>
+              <Icon
+                as={MdOutlineShoppingCart}
+                width="50px"
+                height="35px"
+                color="white"
+                onClick={() => this.props.mudarTela("carrinho")}
+              />
+            </IconeCarrinho>
+          </Tooltip>
+        </Header2>
         <FiltrosContainer>
           <InputGroup>
             <InputLeftElement
