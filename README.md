@@ -2,8 +2,6 @@
 
 link do surge: https://organic-steam.surge.sh/
 
-**Trabalharam neste projeto:** Lincoln Ribeiro, Igor Castro, Giovanna Magalhães, Sávio Ayres e Raoni Lobo.
-
 **Proposta:** Criar uma plataforma de Marketplace: a LabeNinjas. A ideia é que a plataforma sirva a 2 tipos de clientes:
 
 1. **Prestador de serviço:** Aquele que quer criar um anúncio para oferecer seu serviço;
